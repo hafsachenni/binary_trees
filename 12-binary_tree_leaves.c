@@ -16,7 +16,7 @@ size_t binary_tree_leaves(const binary_tree_t *tree)
 		return (0);
 	}
 
-	/* checking if both kids are null. means they're leaves */
+	/* checking if both kids are null. meaning they're leaves */
 	if (tree->left == NULL && tree->right == NULL)
 	{
 		return (1);
