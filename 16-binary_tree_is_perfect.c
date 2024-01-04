@@ -35,7 +35,15 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	{
 		return (0);
 	}
-	if (binary_tree_height(tree->left) == binary_tree_height(tree->right))
+
+	/* checks if node is a leaf */
+	if ((tree->left == NULL) && (tree->right == NULL))
 		return (1);
+
+	/* checks if heights are equal */
+	/* if yes, check if both trees are perfect */
+	if (binary_tree_height(tree->left) == binary_tree_height(tree->right))
+		return (binary_tree_is_perfect(tree->left) &&
+			binary_tree_is_perfect(tree->right));
 	return (0);
 }
