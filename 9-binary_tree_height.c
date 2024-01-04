@@ -1,16 +1,16 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_height -  function that measures the height of a binary tree
+ * binary_tree_height - function that measures the height of a binary tree
  * @tree: tree to be measured
- * Return: 0 if tree is null
+ * Return: height of tree
  */
 
 size_t binary_tree_height(const binary_tree_t *tree)
 {
-	size_t depth_left, depth_right, height;
+	size_t depth_left, depth_right;
 
-	if (tree == NULL)
+	if (tree == NULL || (!tree->left && !tree->right))
 	{
 		return (0);
 	}
